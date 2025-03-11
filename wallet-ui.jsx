@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react"
  
-const TRON_NODE = "https://nile.trongrid.io"; // Mainnet URL (Use "https://nile.trongrid.io" for testnet)
-const CONTRACT_ADDRESS = "TSYinjDEmpVNabieQ2JYHzgDZWCkkLWMnc"; // Replace with your deployed contract address
+
+const CONTRACT_ADDRESS = "TRozB3oUQCxs9U3ppBm1py1psd71KLcte4"; // Replace with your deployed contract address
 
 
 
