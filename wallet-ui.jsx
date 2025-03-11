@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
  
 const TRON_NODE = "https://nile.trongrid.io"; // Mainnet URL (Use "https://nile.trongrid.io" for testnet)
-const CONTRACT_ADDRESS = "TTPWgadhFaPxf9eE73BXbW3o212yuBiQsD"; // Replace with your deployed contract address
+const CONTRACT_ADDRESS = "TSYinjDEmpVNabieQ2JYHzgDZWCkkLWMnc"; // Replace with your deployed contract address
 
 
 
@@ -44,7 +44,7 @@ export default function WalletUI() {
   const addReward = async (userAddress, amount) => {
     try {
       const contract = await getContract();
-      const result = await contract.addReward(userAddress, amount).send({
+      const result = await contract.addReward(userAddress, amount*1e6).send({
         feeLimit: 100_000_000, // Adjust fee limit if needed
       });
   
@@ -64,7 +64,7 @@ export default function WalletUI() {
     try {
       const contract = await getContract();
       const balance = await contract.rewards(wallet).call();
-      setRewardBalance(balance.toString())
+      setRewardBalance(balance.toString()/1e6)
     } catch (error) {
       console.error("Error getting reward balance:", error);
       return "0";
